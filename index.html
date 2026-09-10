@@ -3,319 +3,595 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Método de Ancoramento Arquetípico</title>
-    
-    <!-- Fontes Premium -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <!-- Ícones Lucide -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
+    <title>Alinhamento Arquetípico Pessoal | Érika - Vida Arquetípica</title>
+    <meta name="description" content="Descubra a raiz dos seus bloqueios e alinhe sua frequência energética com a canalização dos seus arquétipos e elementos ideais. Atendimento individual por Érika.">
+    <meta name="theme-color" content="#293829">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        musgo: {
+                            50: '#f4f7f4',
+                            100: '#e6ede5',
+                            200: '#cddbcc',
+                            300: '#a8c0a7',
+                            400: '#7ea07d',
+                            500: '#5d825c',
+                            600: '#486848',
+                            700: '#3b533b',
+                            800: '#314331',
+                            900: '#293829'
+                        },
+                        dourado: {
+                            50: '#fbf8f1',
+                            100: '#f5ecd7',
+                            200: '#ead6ae',
+                            300: '#debc7e',
+                            400: '#d3a357',
+                            500: '#c89040',
+                            600: '#b57a36',
+                            700: '#96602e'
+                        },
+                        roxo: {
+                            50: '#f7f5fa',
+                            100: '#ece6f3',
+                            200: '#d7cce6',
+                            300: '#b9a6d2',
+                            400: '#977eb8',
+                            500: '#7b609e',
+                            600: '#644b83',
+                            700: '#513d69',
+                            800: '#3f3151',
+                            900: '#30263d'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Lora', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        /* VARIÁVEIS DE CORES */
-        :root {
-            --gold: #cda242;
-            --gold-light: #ffe596;
-            --gold-dark: #ae7f1e;
-            --bg-dark: #0b0704;
-            --text-light: #f5f5f7;
-            --text-muted: #cdc7be;
-        }
-
-        /* RESET & BASE */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+        html { scroll-behavior: smooth; }
         body {
-            background-color: var(--bg-dark);
-            /* Fundo Rico com Gradiente e Partículas Douradas Sutis */
-            background-image: radial-gradient(circle at 50% 0%, #2a1b10 0%, var(--bg-dark) 80%), 
-                              url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23cda242' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            color: var(--text-light);
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            color: #293829;
+            background:
+                radial-gradient(circle at 10% 0%, rgba(123,96,158,.10), transparent 28%),
+                radial-gradient(circle at 90% 14%, rgba(200,144,64,.08), transparent 24%),
+                #fbfaf7;
         }
-
-        .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .fonte-acento { font-family: 'Lora', serif; }
+        .sombra-suave { box-shadow: 0 18px 50px -24px rgba(48,38,61,.26); }
+        .sombra-cta { box-shadow: 0 18px 38px -16px rgba(200,144,64,.48); }
+        .card { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 18px 42px -22px rgba(48,38,61,.28); }
+        .btn { transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease; }
+        .btn:hover { transform: translateY(-2px); }
+        .hero-glow {
+            background:
+                radial-gradient(circle at 50% 25%, rgba(255,255,255,.12), transparent 35%),
+                linear-gradient(135deg, #293829 0%, #314331 58%, #3f3151 100%);
+        }
+        .linha-dourada { width: 54px; height: 2px; background: #d3a357; border-radius: 999px; }
+        .whatsapp-flutuante { animation: pulso 2.6s infinite; }
+        @keyframes pulso {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.045); }
+        }
+        .faq-icon { transition: transform .2s ease; }
+        details[open] .faq-icon { transform: rotate(45deg); }
         
-        /* TIPOGRAFIA */
-        h1, h2, h3 { font-family: 'Cinzel', serif; text-transform: uppercase; letter-spacing: 1px; }
-        .subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--text-muted); margin-bottom: 40px; font-weight: 400; line-height: 1.4; }
-        
-        .gold-text {
-            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-dark) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 800;
+        .badge-vagas {
+            animation: piscarSuave 3s infinite;
         }
-
-        /* BOTÃO PRIMÁRIO */
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #ffd778 0%, #b8860b 100%);
-            color: #000;
-            text-decoration: none;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 800;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            padding: 20px 40px;
-            border-radius: 50px;
-            box-shadow: 0 4px 20px rgba(184, 134, 11, 0.4);
-            transition: all 0.3s ease;
-            text-align: center;
-            letter-spacing: 1px;
-            width: 100%;
-            max-width: 450px;
-        }
-        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 6px 25px rgba(184, 134, 11, 0.6); }
-
-        /* HERO SECTION */
-        header { padding: 60px 0; border-bottom: 1px solid rgba(212, 175, 55, 0.1); }
-        .hero-grid { display: flex; align-items: center; justify-content: space-between; gap: 40px; margin-bottom: 40px; }
-        .hero-text { flex: 1; text-align: left; }
-        
-        /* IMAGEM OTIMIZADA */
-        .hero-image-area { flex: 1; text-align: center; position: relative; }
-        .hero-image-area img { 
-            width: 60%; 
-            max-width: 500px; 
-            border-radius: 12px; 
-            box-shadow: 0 0 50px rgba(205, 162, 66, 0.35); /* Brilho Dourado */
-            border: 1px solid rgba(212, 175, 55, 0.2); 
-        }
-
-        .badge { font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; font-weight: 600;}
-        h1 { font-size: 2.8rem; line-height: 1.2; margin-bottom: 25px; }
-
-        /* CAIXA DE DESTAQUE */
-        .highlight-box { 
-            background: rgba(20, 12, 7, 0.7); 
-            border: 1px solid rgba(212, 175, 55, 0.2); 
-            padding: 35px; 
-            border-radius: 12px; 
-            backdrop-filter: blur(8px);
-        }
-        .highlight-box p { font-size: 1.1rem; margin-bottom: 15px; }
-        .highlight-box p:last-child { margin-bottom: 0; }
-
-        /* CARACTERÍSTICAS RÁPIDAS (COM ÍCONES) */
-        .features-bar { background: rgba(11, 7, 4, 0.9); padding: 30px 0; border-bottom: 1px solid rgba(212, 175, 55, 0.1); }
-        .grid-4 { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; text-align: center; }
-        .feature-item { display: flex; flex-direction: column; align-items: center; gap: 12px; }
-        .feature-item i { color: var(--gold); }
-        .feature-item h4 { font-size: 0.95rem; color: #ffd778; letter-spacing: 1px; font-weight: 600; }
-
-        /* PÚBLICO ALVO */
-        .target-section { padding: 80px 0; }
-        h2 { font-size: 2.2rem; text-align: center; margin-bottom: 50px; }
-        .target-list { list-style: none; max-width: 800px; margin: 0 auto; }
-        .target-list li { position: relative; padding-left: 0; margin-bottom: 25px; font-size: 1.1rem; display: flex; align-items: flex-start; gap: 15px; }
-        .target-list li i { color: var(--gold); flex-shrink: 0; margin-top: 4px; }
-
-        /* ENTREGÁVEIS */
-        .deliverables-section { padding: 80px 0; background: linear-gradient(180deg, transparent 0%, rgba(20, 12, 7, 0.6) 50%, transparent 100%); }
-        .deliverables-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-bottom: 50px; }
-        .deliverable-card { background: rgba(20, 13, 8, 0.8); border: 1px solid rgba(212, 175, 55, 0.15); padding: 30px; border-radius: 12px; transition: border 0.3s ease; backdrop-filter: blur(5px); }
-        .deliverable-card:hover { border-color: rgba(212, 175, 55, 0.5); }
-        .deliverable-card h3 { color: #ffd778; margin-bottom: 12px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
-        .deliverable-card p { font-size: 1rem; color: var(--text-muted); }
-
-        /* BÔNUS */
-        .bonus-box { background: radial-gradient(circle at top left, #2c1e13 0%, #0b0704 100%); border: 2px dashed var(--gold); padding: 40px; border-radius: 12px; text-align: center; margin-top: 40px; }
-        .bonus-badge { background: var(--gold); color: #000; padding: 5px 15px; font-weight: 900; text-transform: uppercase; font-size: 0.8rem; border-radius: 4px; display: inline-block; margin-bottom: 15px; letter-spacing: 1px; }
-
-        /* GARANTIA (NOVA SEÇÃO EXCLUSIVA) */
-        .guarantee-section { padding: 60px 0; text-align: center; background: rgba(20, 12, 7, 0.5); border-top: 1px solid rgba(212, 175, 55, 0.1); border-bottom: 1px solid rgba(212, 175, 55, 0.1); }
-        .guarantee-box { max-width: 650px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; }
-        .guarantee-box p { font-size: 1.1rem; color: var(--text-muted); }
-
-        /* OFERTA E PREÇO */
-        .offer-section { padding: 80px 0; text-align: center; }
-        .price-container { margin: 40px 0; }
-        .old-price { font-size: 1.3rem; text-decoration: line-through; color: #8a8279; margin-bottom: 5px; }
-        .new-price { font-size: 4rem; font-weight: 900; color: #fff; line-height: 1; margin-bottom: 15px; }
-        .offer-note { font-size: 1.2rem; color: #ffd778; margin-top: 25px; font-style: italic; font-family: 'Cormorant Garamond', serif; }
-
-        footer { padding: 40px 0; text-align: center; font-size: 0.85rem; color: #665f57; border-top: 1px solid rgba(212, 175, 55, 0.05); }
-
-        /* RESPONSIVIDADE E BOTÃO FIXO MOBILE */
-        .desktop-only { display: inline-block; }
-        .mobile-only { display: none; }
-        
-        /* Configuração do Botão Fixo */
-        .sticky-cta { 
-            display: none; 
-            position: fixed; 
-            bottom: 0; 
-            left: 0; 
-            width: 100%; 
-            background: rgba(11, 7, 4, 0.95); 
-            padding: 15px 20px; 
-            border-top: 1px solid rgba(212, 175, 55, 0.4); 
-            z-index: 999; 
-            text-align: center; 
-            backdrop-filter: blur(10px); 
-        }
-        .sticky-cta .cta-button { padding: 15px 30px; font-size: 1.1rem; max-width: 100%; width: 100%; margin: 0; }
-
-        @media (max-width: 768px) {
-            .hero-grid { flex-direction: column; gap: 30px; text-align: center; }
-            .hero-text { text-align: center; }
-            .hero-image-area img { width: 90%; } /* Imagem dominando a tela no mobile */
-            .badge { justify-content: center; }
-            h1 { font-size: 2.2rem; }
-            h2 { font-size: 1.8rem; }
-            .subtitle { font-size: 1.3rem; }
-            .grid-4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
-            .deliverables-grid { grid-template-columns: 1fr; }
-            .new-price { font-size: 3rem; }
-            
-            /* Ativação do Botão Fixo e Ajustes de Layout */
-            .desktop-only { display: none; }
-            .mobile-only { display: inline-block; margin-top: 25px; }
-            .sticky-cta { display: block; }
-            body { padding-bottom: 85px; } /* Espaço para o botão fixo não tampar o rodapé */
+        @keyframes piscarSuave {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.85; }
         }
     </style>
 </head>
+
 <body>
-
-    <!-- HERO SECTION -->
-    <header>
-        <div class="container">
-            <div class="hero-grid">
-                
-                <div class="hero-text">
-                    <span class="badge"><i data-lucide="crown" size="18"></i> Método Exclusivo</span>
-                    <h1>Método de <br><span class="gold-text">Ancoramento Arquetípico</span></h1>
-                    <p class="subtitle">Aprenda a ativar os arquétipos da forma correta e descubra como potencializar resultados verdadeiramente transformadores na sua vida.</p>
-                    
-                    <a href="#comprar" class="cta-button desktop-only">Quero Acessar o Método Agora</a>
-                </div>
-
-                <div class="hero-image-area">
-                    <img src="foto.jpg.png" alt="Método de Ancoramento Arquetípico">
-                    
-                    <a href="#comprar" class="cta-button mobile-only">Quero Acessar o Método Agora</a>
-                </div>
-
-            </div>
-
-            <div class="highlight-box">
-                <p><strong>Chega de ativar inúmeros arquétipos sem saber se está fazendo da maneira certa.</strong></p>
-                <p>Neste método, eu compartilho exatamente o processo que utilizo nas minhas próprias ativações arquetípicas. Um passo a passo simples, prático e organizado, desenvolvido para ajudar você a compreender como trabalhar os arquétipos com mais consciência, intenção e direcionamento.</p>
-                <p>Se você sente que está perdida, pulando de um arquétipo para outro sem perceber mudanças, este método pode transformar completamente a forma como você utiliza esse conhecimento.</p>
-            </div>
+    <!-- NAVEGAÇÃO FIXA -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-xl border-b border-roxo-100/80">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
+            <a href="#" class="flex items-center gap-3 shrink-0" aria-label="Vida Arquetípica">
+                <span class="w-9 h-9 rounded-full border border-dourado-300 flex items-center justify-center">
+                    <svg class="w-4 h-4 text-dourado-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                        <path d="M12 4c1.9 2.8 4.6 4.1 4.6 7.2A4.6 4.6 0 0 1 12 16a4.6 4.6 0 0 1-4.6-4.8C7.4 8.1 10.1 6.8 12 4Z"/>
+                        <path d="M12 16v4M8 20h8"/>
+                    </svg>
+                </span>
+                <span class="fonte-acento text-roxo-900 font-semibold text-sm sm:text-base">Vida Arquetípica</span>
+            </a>
+            <a href="https://forms.gle/66k5yCtRTrNafBMNA" target="_blank" rel="noopener noreferrer"
+               class="btn bg-roxo-700 hover:bg-roxo-800 text-white px-4 sm:px-6 py-2.5 rounded-full text-[11px] sm:text-xs font-bold tracking-wide">
+                QUERO MEU ALINHAMENTO
+            </a>
         </div>
     </header>
 
-    <!-- CARACTERÍSTICAS COM ÍCONES LUCIDE -->
-    <section class="features-bar">
-        <div class="container">
-            <div class="grid-4">
-                <div class="feature-item"><i data-lucide="zap" size="28"></i><h4>ATIVAÇÃO REAL</h4></div>
-                <div class="feature-item"><i data-lucide="crown" size="28"></i><h4>RESULTADOS PODEROSOS</h4></div>
-                <div class="feature-item"><i data-lucide="sparkles" size="28"></i><h4>PASSO A PASSO COMPLETO</h4></div>
-                <div class="feature-item"><i data-lucide="heart" size="28"></i><h4>MÉTODO QUE EU UTILIZO</h4></div>
-            </div>
-        </div>
-    </section>
+    <div class="h-[66px]"></div>
 
-    <!-- PÚBLICO ALVO -->
-    <section class="target-section">
-        <div class="container">
-            <h2>Para quem é este método?</h2>
-            <ul class="target-list">
-                <li><i data-lucide="check-circle-2"></i> Para quem já ativou diversos arquétipos e nunca conseguiu perceber resultados consistentes.</li>
-                <li><i data-lucide="check-circle-2"></i> Para quem não faz ideia de por onde começar.</li>
-                <li><i data-lucide="check-circle-2"></i> Para quem deseja aprender a ativar arquétipos de forma correta e potencializar mudanças reais em diferentes áreas da vida.</li>
-                <li><i data-lucide="check-circle-2"></i> Para quem busca um método simples, prático e eficiente, sem complicações.</li>
-                <li><i data-lucide="check-circle-2"></i> Para quem deseja utilizar os arquétipos com muito mais confiança e clareza.</li>
-            </ul>
-        </div>
-    </section>
+    <main>
+        <!-- HERO -->
+        <section class="px-4 sm:px-6 pt-10 pb-14">
+            <div class="max-w-5xl mx-auto">
+                <div class="hero-glow rounded-[2rem] overflow-hidden sombra-suave relative">
+                    <div class="px-6 sm:px-10 lg:px-14 py-12 sm:py-16 text-center text-white">
+                        
+                        <!-- TARJA DE ESCASSEZ E URGÊNCIA -->
+                        <div class="inline-flex items-center gap-2 bg-dourado-500/20 border border-dourado-400/40 px-4 py-1.5 rounded-full mb-6 backdrop-blur-md badge-vagas">
+                            <span class="w-2 h-2 rounded-full bg-dourado-400 animate-ping"></span>
+                            <span class="text-[11px] sm:text-xs font-bold tracking-wider uppercase text-dourado-200">
+                                🚨 Últimas 5 Vagas para Setembro
+                            </span>
+                        </div>
 
-    <!-- ENTREGÁVEIS -->
-    <section class="deliverables-section">
-        <div class="container">
-            <h2>O Que Você Vai Receber</h2>
-            
-            <div class="deliverables-grid">
-                <div class="deliverable-card">
-                    <h3><i data-lucide="award"></i> O Método Completo</h3>
-                    <p>Acesso integral ao meu Método de Ancoramento Arquetípico com toda a base teórica e prática necessária.</p>
-                </div>
-                <div class="deliverable-card">
-                    <h3><i data-lucide="compass"></i> Direcionamento Atual</h3>
-                    <p>Descubra com precisão qual arquétipo faz mais sentido para o seu momento de vida atual.</p>
-                </div>
-                <div class="deliverable-card">
-                    <h3><i data-lucide="layers"></i> Materiais de Apoio</h3>
-                    <p>Todos os materiais e ferramentas necessários para realizar a sua ativação de forma segura.</p>
-                </div>
-                <div class="deliverable-card">
-                    <h3><i data-lucide="shield"></i> Guia de Fortalecimento</h3>
-                    <p>Como blindar e fortalecer sua conexão com o arquétipo escolhido para manter a prática consciente e consistente.</p>
+                        <h1 class="fonte-acento text-3xl sm:text-5xl lg:text-6xl font-semibold leading-[1.12] max-w-4xl mx-auto">
+                            Sinta a transformação real de alinhar sua energia com os arquétipos certos para o seu momento.
+                        </h1>
+                        
+                        <p class="fonte-acento text-lg sm:text-2xl text-dourado-200 mt-5 max-w-3xl mx-auto leading-relaxed">
+                            Chega de tentar em vão. Descubra a raiz dos seus bloqueios e ative o combo de energias perfeito para destravar sua vida.
+                        </p>
+                        
+                        <p class="text-sm sm:text-base text-roxo-100 max-w-2xl mx-auto mt-6 leading-relaxed">
+                            Uma canalização espiritual profunda, análise da sua distribuição elemental (Água, Terra, Fogo e Ar) e direcionamento individual feito por Érika.
+                        </p>
+
+                        <div class="mt-9 flex flex-col items-center gap-3">
+                            <a href="https://forms.gle/66k5yCtRTrNafBMNA" target="_blank" rel="noopener noreferrer"
+                               class="btn sombra-cta inline-flex items-center justify-center bg-dourado-500 hover:bg-dourado-400 text-roxo-900 font-extrabold px-8 sm:px-10 py-4.5 rounded-2xl text-base sm:text-lg tracking-wide">
+                                QUERO MEU ALINHAMENTO ARQUETÍPICO
+                            </a>
+                            <p class="text-xs sm:text-sm text-roxo-200 font-medium">
+                                R$ 249,90 (Pix ou Cartão) · Atendimento 100% Individual
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <p style="text-align: center; max-width: 700px; margin: 0 auto; color: #e3ded5; font-size: 1.1rem;">
-                Ao concluir o método, você terá segurança para ativar qualquer arquétipo utilizando um processo claro, organizado e que poderá aplicar sempre que desejar.
-            </p>
-
-            <div class="bonus-box">
-                <span class="bonus-badge">Bônus Especial</span>
-                <h3 class="gold-text" style="font-size: 1.8rem; margin-bottom: 10px;">Telinhas Arquetípicas Estratégicas</h3>
-                <p style="color: #cdc7be; max-width: 600px; margin: 0 auto;">Aprenda como criar Telinhas Arquetípicas de forma estratégica para potencializar suas ativações diretamente no plano de fundo do seu celular.</p>
+        <!-- IMAGEM PRINCIPAL COM APRESENTAÇÃO -->
+        <section class="px-4 sm:px-6 pb-16">
+            <div class="max-w-3xl mx-auto">
+                <div class="rounded-[1.75rem] overflow-hidden sombra-suave border border-roxo-100 bg-white">
+                    <img src="imagem 1.png" alt="Érika - Vida Arquetípica" class="w-full h-auto object-cover" loading="eager">
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SEÇÃO DE GARANTIA (NOVA) -->
-    <section class="guarantee-section">
-        <div class="container">
-            <div class="guarantee-box">
-                <i data-lucide="shield-check" style="color: var(--gold); width: 64px; height: 64px;"></i>
-                <h2>7 Dias de Garantia Incondicional</h2>
-                <p>Eu confio tanto na transformação que esse método pode gerar na sua vida que estou assumindo todo o risco. Você tem 7 dias para testar o Método de Ancoramento Arquetípico. Se por qualquer motivo você não se sentir completamente satisfeita, basta enviar um e-mail e eu devolvo 100% do seu investimento. Sem burocracia e sem letras miúdas.</p>
+        <!-- A VERDADE QUE NINGUÉM TE CONTA (DESEJO & IDENTIFICAÇÃO) -->
+        <section class="px-4 sm:px-6 pb-16">
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="text-xs uppercase tracking-[.2em] text-dourado-700 font-bold mb-3">Sua virada de chave</p>
+                <h2 class="fonte-acento text-3xl sm:text-4xl text-roxo-900 font-semibold leading-tight">
+                    Você provavelmente chegou até aqui por estar se sentindo confusa ou perdida...
+                </h2>
+                <div class="linha-dourada mx-auto my-6"></div>
+                <p class="text-roxo-800 leading-7 text-base sm:text-lg max-w-2xl mx-auto font-normal">
+                    Provavelmente você já tentou usar diversos arquétipos por conta própria, trocou de imagem no celular, mas sentiu que <strong>nada mudou</strong> ou até que as coisas travaram ainda mais.
+                </p>
+                <p class="text-roxo-700 leading-7 text-sm sm:text-base max-w-2xl mx-auto mt-4">
+                    Eu não preciso saber com antecedência quais são os seus maiores objetivos ou o sonho que você mais deseja realizar. Mas posso te dizer com todas as letras: <strong class="text-roxo-900">É POSSÍVEL, E EXISTE UM CAMINHO.</strong>
+                </p>
+                <p class="text-roxo-700 leading-7 text-sm sm:text-base max-w-2xl mx-auto mt-4">
+                    Mas primeiro, você precisa alinhar sua frequência energética e estar vibrando exatamente no mesmo campo daquilo que deseja atrair. E é exatamente esse o trabalho transformador que eu realizo hoje.
+                </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- OFERTA -->
-    <section id="comprar" class="offer-section">
-        <div class="container">
-            <span class="badge" style="justify-content: center;"><i data-lucide="lock" size="18"></i> Acesso Imediato e Seguro</span>
-            <h2>Invista no seu Desenvolvimento</h2>
-            
-            <div class="price-container">
-                <p class="old-price">De R$ 147,90</p>
-                <p class="new-price"><span style="font-size: 1.8rem; font-weight:400; vertical-align: super;">R$</span> 78,90</p>
-                <p style="color:#8a8279; font-size:0.9rem;">Pagamento único com acesso vitalício</p>
+        <!-- O DIFERENCIAL: "ÚLTIMA ESPERANÇA" -->
+        <section class="px-4 sm:px-6 pb-16">
+            <div class="max-w-5xl mx-auto bg-gradient-to-br from-roxo-900 to-musgo-900 rounded-[2rem] text-white p-8 sm:p-12 sombra-suave relative overflow-hidden">
+                <div class="max-w-3xl mx-auto text-center relative z-10">
+                    <span class="text-dourado-300 font-bold text-xs uppercase tracking-widest bg-dourado-500/10 px-4 py-1.5 rounded-full border border-dourado-400/20">
+                        Direção e Clareza Real
+                    </span>
+                    <h2 class="fonte-acento text-3xl sm:text-4xl font-semibold mt-4 leading-tight text-white">
+                        "Muitas pessoas chegam até mim dizendo que sou a última esperança..."
+                    </h2>
+                    <p class="text-roxo-100 text-base sm:text-lg leading-relaxed mt-5">
+                        ...por estarem cansadas de tantas tentativas errôneas em vão. E o que acontece em seguida é emocionante: elas encontram a direção exata e se surpreendem com toda a orientação revelada no <strong>Alinhamento Arquetípico Pessoal</strong>.
+                    </p>
+                    <p class="text-dourado-200 text-sm sm:text-base font-semibold mt-6 leading-relaxed">
+                        A sua mudança já começa no momento em que você escuta a minha orientação — e ela se expande cada vez mais conforme você aplica os direcionamentos no seu dia a dia.
+                    </p>
+                </div>
             </div>
+        </section>
 
-            <a href="https://pay.kiwify.com.br/RzflfIY" class="cta-button" style="font-size: 1.3rem;">Quero Acessar o Método Agora</a>
+        <!-- ÁREAS DA VIDA QUE SERÃO DESTRAVADAS -->
+        <section class="px-4 sm:px-6 pb-16">
+            <div class="max-w-5xl mx-auto bg-white rounded-[1.75rem] border border-roxo-100 sombra-suave p-7 sm:p-10 lg:p-12">
+                <div class="max-w-2xl text-center sm:text-left">
+                    <p class="text-xs uppercase tracking-[.18em] text-roxo-600 font-bold">Para o seu momento atual</p>
+                    <h2 class="fonte-acento text-3xl sm:text-4xl text-roxo-900 font-semibold mt-2 leading-tight">
+                        O que o seu Alinhamento vai destravar?
+                    </h2>
+                    <p class="text-sm sm:text-base text-roxo-600 mt-3 leading-relaxed">
+                        Ao canalizar sua energia, identificamos exatamente onde está o bloqueio para virar a chave nas áreas que mais pedem transformação:
+                    </p>
+                </div>
 
-            <p class="offer-note">"Uma única aplicação desse método pode mudar completamente a forma como você trabalha com os arquétipos."</p>
-        </div>
-    </section>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 mt-8">
+                    <div class="card rounded-2xl border border-roxo-100 bg-roxo-50/70 px-5 py-4 text-sm font-semibold text-roxo-900 flex items-center gap-3">
+                        <span class="text-dourado-600 text-lg">✦</span> Prosperidade & Dinheiro
+                    </div>
+                    <div class="card rounded-2xl border border-roxo-100 bg-roxo-50/70 px-5 py-4 text-sm font-semibold text-roxo-900 flex items-center gap-3">
+                        <span class="text-dourado-600 text-lg">✦</span> Amor & Relacionamentos
+                    </div>
+                    <div class="card rounded-2xl border border-roxo-100 bg-roxo-50/70 px-5 py-4 text-sm font-semibold text-roxo-900 flex items-center gap-3">
+                        <span class="text-dourado-600 text-lg">✦</span> Autoestima & Confiança
+                    </div>
+                    <div class="card rounded-2xl border border-roxo-100 bg-roxo-50/70 px-5 py-4 text-sm font-semibold text-roxo-900 flex items-center gap-3">
+                        <span class="text-dourado-600 text-lg">✦</span> Coragem & Atitude
+                    </div>
+                    <div class="card rounded-2xl border border-roxo-100 bg-roxo-50/70 px-5 py-4 text-sm font-semibold text-roxo-900 flex items-center gap-3">
+                        <span class="text-dourado-600 text-lg">✦</span> Poder Pessoal Magnético
+                    </div>
+                    <div class="card rounded-2xl border border-roxo-100 bg-roxo-50/70 px-5 py-4 text-sm font-semibold text-roxo-900 flex items-center gap-3">
+                        <span class="text-dourado-600 text-lg">✦</span> Sucesso & Realização
+                    </div>
+                    <div class="card rounded-2xl border border-roxo-100 bg-roxo-50/70 px-5 py-4 text-sm font-semibold text-roxo-900 flex items-center gap-3">
+                        <span class="text-dourado-600 text-lg">✦</span> Comunicação & Presença
+                    </div>
+                    <div class="card rounded-2xl border border-roxo-100 bg-roxo-50/70 px-5 py-4 text-sm font-semibold text-roxo-900 flex items-center gap-3">
+                        <span class="text-dourado-600 text-lg">✦</span> Novas Oportunidades
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Vida Arquetípica. Todos os direitos reservados.</p>
+        <!-- COMO FUNCIONA O ALINHAMENTO (PASSO A PASSO DETALHADO) -->
+        <section class="px-4 sm:px-6 pb-16">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <p class="text-xs uppercase tracking-[.18em] text-dourado-700 font-bold">Processo Profundo</p>
+                    <h2 class="fonte-acento text-3xl sm:text-4xl text-roxo-900 font-semibold mt-2">
+                        Como Funciona o Alinhamento Arquetípico Pessoal?
+                    </h2>
+                    <p class="text-sm sm:text-base text-roxo-600 mt-3">
+                        Um trabalho individual e minucioso dividido em etapas de pura clareza:
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-5">
+                    <!-- PASSO 1 -->
+                    <div class="card bg-white rounded-2xl border border-roxo-100 p-7 sombra-suave flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-dourado-600 bg-dourado-50 px-3 py-1 rounded-full border border-dourado-200">Passo 01</span>
+                            <h3 class="fonte-acento text-xl font-semibold text-roxo-900 mt-4">Canalização Espiritual</h3>
+                            <p class="text-sm text-roxo-700 leading-relaxed mt-3">
+                                No primeiro momento é realizada uma canalização espiritual da sua energia. Faço isso através da conexão com os meus mentores com a permissão da sua egrégora espiritual — pois, caso você não saiba, foram eles que te guiaram até aqui.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- PASSO 2 -->
+                    <div class="card bg-white rounded-2xl border border-roxo-100 p-7 sombra-suave flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-dourado-600 bg-dourado-50 px-3 py-1 rounded-full border border-dourado-200">Passo 02</span>
+                            <h3 class="fonte-acento text-xl font-semibold text-roxo-900 mt-4">Clareza & Mensagens Principais</h3>
+                            <p class="text-sm text-roxo-700 leading-relaxed mt-3">
+                                Logo em seguida, recebo todas as orientações e mensagens essenciais para você. São as energias principais que viram a chave na sua mente. Tudo começa com essa clareza e direção inicial.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- PASSO 3 -->
+                    <div class="card bg-white rounded-2xl border border-roxo-100 p-7 sombra-suave flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-dourado-600 bg-dourado-50 px-3 py-1 rounded-full border border-dourado-200">Passo 03</span>
+                            <h3 class="fonte-acento text-xl font-semibold text-roxo-900 mt-4">Mapeamento da Raiz dos Desafios</h3>
+                            <p class="text-sm text-roxo-700 leading-relaxed mt-3">
+                                Através dessa canalização (somada à análise de Mapa Astral e Tarô), descobriremos exatamente a raiz dos seus desafios e o que vem travando ou bloqueando sua evolução amorosa, financeira, mental ou na sua autoconfiança.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- PASSO 4 -->
+                    <div class="card bg-white rounded-2xl border border-roxo-100 p-7 sombra-suave flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-dourado-600 bg-dourado-50 px-3 py-1 rounded-full border border-dourado-200">Passo 04</span>
+                            <h3 class="fonte-acento text-xl font-semibold text-roxo-900 mt-4">Ancoramento & Combo Arquetípico</h3>
+                            <p class="text-sm text-roxo-700 leading-relaxed mt-3">
+                                É passado exatamente o conjunto de energias que você precisará ativar: indicação precisa de arquétipos, decretos potentes de ativação energética e o alinhamento correto do seu combo individual.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ALERTA DE VALOR / NÃO É SÓ IMAGEM NA TELA -->
+        <section class="px-4 sm:px-6 pb-16">
+            <div class="max-w-4xl mx-auto text-center rounded-[2rem] border-2 border-dourado-400/60 bg-gradient-to-r from-dourado-50 via-white to-roxo-50 p-8 sm:p-12 sombra-suave">
+                <span class="text-xs font-extrabold uppercase tracking-[.25em] text-roxo-900 bg-dourado-200 px-4 py-1.5 rounded-full">
+                    Aviso Importante
+                </span>
+                <h3 class="fonte-acento text-2xl sm:text-3xl text-roxo-900 font-extrabold mt-5 uppercase tracking-wide leading-snug">
+                    NÃO É UMA ATIVAÇÃO SIMPLES.<br class="hidden sm:inline"> NÃO SÃO SIMPLESMENTE IMAGENS NA TELA DO SEU CELULAR.
+                </h3>
+                <p class="text-roxo-800 text-base sm:text-lg leading-relaxed mt-5 max-w-3xl mx-auto">
+                    Você passará por um processo de <strong>ancoramento potente</strong> das energias mais alinhadas que precisa urgentemente desenvolver e "incorporar" em si para mudar a sua vida de uma forma que você não esperava, mas que irá transformar tudo!
+                </p>
+            </div>
+        </section>
+
+        <!-- APROFUNDAMENTO ELEMENTAL (ÁGUA, TERRA, FOGO, AR) -->
+        <section class="px-4 sm:px-6 pb-16">
+            <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-6 items-stretch">
+                <div class="rounded-[1.75rem] bg-roxo-900 text-white p-8 sm:p-10 sombra-suave flex flex-col justify-center">
+                    <p class="text-xs uppercase tracking-[.18em] text-dourado-300 font-bold">Sua Distribuição Energética</p>
+                    <h2 class="fonte-acento text-3xl sm:text-4xl font-semibold mt-3 leading-tight">
+                        Seus Elementos: Água, Terra, Fogo e Ar.
+                    </h2>
+                    <p class="text-roxo-100 text-sm sm:text-base leading-relaxed mt-5">
+                        Nesse alinhamento também irei te explicar algo fundamental: como a sua distribuição elemental influencia diretamente em cada uma das suas decisões, dúvidas e conquistas.
+                    </p>
+                    <p class="text-dourado-200 font-medium text-sm sm:text-base mt-4">
+                        Você saberá exatamente os elementos que te regem e como equilibrá-los fará você ficar muito mais alinhada consigo mesma e com o seu potencial máximo.
+                    </p>
+                </div>
+
+                <div class="rounded-[1.75rem] bg-white border border-roxo-100 p-8 sm:p-10 sombra-suave flex flex-col justify-center space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-roxo-100 text-roxo-800 flex items-center justify-center font-bold text-lg shrink-0">💧</div>
+                        <div>
+                            <h4 class="font-bold text-roxo-900">Elemento Água</h4>
+                            <p class="text-xs sm:text-sm text-roxo-600 mt-1">Emoções, intuição, maturidade afetiva e profundidade espiritual.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-dourado-100 text-dourado-800 flex items-center justify-center font-bold text-lg shrink-0">🌱</div>
+                        <div>
+                            <h4 class="font-bold text-roxo-900">Elemento Terra</h4>
+                            <p class="text-xs sm:text-sm text-roxo-600 mt-1">Estrutura, materialização financeira, estabilidade e consistência.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-roxo-100 text-roxo-800 flex items-center justify-center font-bold text-lg shrink-0">🔥</div>
+                        <div>
+                            <h4 class="font-bold text-roxo-900">Elemento Fogo</h4>
+                            <p class="text-xs sm:text-sm text-roxo-600 mt-1">Ação, coragem, paixão, atitude e poder de realização rápida.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-dourado-100 text-dourado-800 flex items-center justify-center font-bold text-lg shrink-0">💨</div>
+                        <div>
+                            <h4 class="font-bold text-roxo-900">Elemento Ar</h4>
+                            <p class="text-xs sm:text-sm text-roxo-600 mt-1">Clareza mental, foco, inteligência estratégica e comunicação.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- O QUE VOCÊ RECEBE (ENTREGA COMPLETA) -->
+        <section class="px-4 sm:px-6 pb-16">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-9">
+                    <p class="text-xs uppercase tracking-[.18em] text-dourado-700 font-bold">Entrega Completa</p>
+                    <h2 class="fonte-acento text-3xl sm:text-4xl text-roxo-900 font-semibold mt-2">
+                        Tudo o que está incluído no seu Alinhamento
+                    </h2>
+                    <p class="text-sm sm:text-base text-roxo-600 mt-3">
+                        Material prático, detalhado e entregue diretamente para você:
+                    </p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <article class="card bg-white rounded-2xl border border-roxo-100 p-6 sombra-suave">
+                        <span class="text-[11px] uppercase tracking-wider text-dourado-700 font-bold">01 · Canalização</span>
+                        <h3 class="fonte-acento text-xl font-semibold text-roxo-900 mt-2">Mensagem da Egrégora</h3>
+                        <p class="text-sm text-roxo-600 leading-relaxed mt-3">Conexão espiritual individual para trazer as respostas essenciais para o seu momento atual.</p>
+                    </article>
+
+                    <article class="card bg-white rounded-2xl border border-roxo-100 p-6 sombra-suave">
+                        <span class="text-[11px] uppercase tracking-wider text-dourado-700 font-bold">02 · Elementos</span>
+                        <h3 class="fonte-acento text-xl font-semibold text-roxo-900 mt-2">Análise Elemental</h3>
+                        <p class="text-sm text-roxo-600 leading-relaxed mt-3">Mapeamento da sua energia (Água, Terra, Fogo, Ar) e como equilibrá-los para atingir seus objetivos.</p>
+                    </article>
+
+                    <article class="card bg-white rounded-2xl border border-roxo-100 p-6 sombra-suave">
+                        <span class="text-[11px] uppercase tracking-wider text-dourado-700 font-bold">03 · Ativação</span>
+                        <h3 class="fonte-acento text-xl font-semibold text-roxo-900 mt-2">Combo de Arquétipos</h3>
+                        <p class="text-sm text-roxo-600 leading-relaxed mt-3">Escolha e combinação perfeita dos arquétipos indicados para o seu momento de destravar.</p>
+                    </article>
+
+                    <article class="card bg-white rounded-2xl border border-roxo-100 p-6 sombra-suave">
+                        <span class="text-[11px] uppercase tracking-wider text-dourado-700 font-bold">04 · Prática</span>
+                        <h3 class="fonte-acento text-xl font-semibold text-roxo-900 mt-2">Decretos Potentes</h3>
+                        <p class="text-sm text-roxo-600 leading-relaxed mt-3">Comandos verbais e de decretos quânticos para ancorar a energia e acelerar seus resultados.</p>
+                    </article>
+
+                    <article class="card bg-white rounded-2xl border border-roxo-100 p-6 sombra-suave">
+                        <span class="text-[11px] uppercase tracking-wider text-dourado-700 font-bold">05 · Áudios</span>
+                        <h3 class="fonte-acento text-xl font-semibold text-roxo-900 mt-2">Áudios Explicativos</h3>
+                        <p class="text-sm text-roxo-600 leading-relaxed mt-3">Toda a análise é gravada em áudios detalhados para você ouvir onde e quando quiser.</p>
+                    </article>
+
+                    <article class="card bg-white rounded-2xl border border-roxo-100 p-6 sombra-suave">
+                        <span class="text-[11px] uppercase tracking-wider text-dourado-700 font-bold">06 · Material</span>
+                        <h3 class="fonte-acento text-xl font-semibold text-roxo-900 mt-2">PDFs Explicativos</h3>
+                        <p class="text-sm text-roxo-600 leading-relaxed mt-3">Resumo em PDF entregue via WhatsApp ou E-mail para fácil consulta e acompanhamento.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEPOIMENTOS DAS CLIENTES -->
+        <section class="px-4 sm:px-6 pb-16">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-9">
+                    <p class="text-xs uppercase tracking-[.18em] text-roxo-600 font-bold">Transformações Reais</p>
+                    <h2 class="fonte-acento text-3xl sm:text-4xl text-roxo-900 font-semibold mt-2">
+                        Depoimentos de quem já passou pelo Alinhamento
+                    </h2>
+                    <p class="text-sm sm:text-base text-roxo-600 mt-2">Veja o que dizem as pessoas que encontraram a direção certa:</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <img src="imagem 4.png" alt="Depoimento 1" loading="lazy" class="rounded-2xl sombra-suave w-full h-auto border border-roxo-100">
+                    <img src="imagem 5.png" alt="Depoimento 2" loading="lazy" class="rounded-2xl sombra-suave w-full h-auto border border-roxo-100">
+                    <img src="imagem 6.png" alt="Depoimento 3" loading="lazy" class="rounded-2xl sombra-suave w-full h-auto border border-roxo-100">
+                    <img src="imagem 7.png" alt="Depoimento 4" loading="lazy" class="rounded-2xl sombra-suave w-full h-auto border border-roxo-100">
+                    <img src="imagem 8.png" alt="Depoimento 5" loading="lazy" class="rounded-2xl sombra-suave w-full h-auto border border-roxo-100">
+                    <img src="imagem 9.png" alt="Depoimento 6" loading="lazy" class="rounded-2xl sombra-suave w-full h-auto border border-roxo-100">
+                </div>
+            </div>
+        </section>
+
+        <!-- CHECKOUT & OFERTA PRINCIPAL (MÁXIMA CONVERSÃO COM ESCASSEZ) -->
+        <section class="px-4 sm:px-6 pb-16" id="checkout">
+            <div class="max-w-3xl mx-auto">
+                <div class="rounded-[2rem] bg-gradient-to-br from-roxo-900 via-roxo-800 to-musgo-900 text-white p-8 sm:p-12 sombra-suave text-center relative overflow-hidden border border-dourado-400/30">
+                    <div class="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-dourado-400/10 blur-2xl"></div>
+                    
+                    <div class="relative">
+                        <!-- BANNER DE ESCASSEZ -->
+                        <div class="inline-flex items-center gap-2 bg-dourado-500 text-roxo-900 font-extrabold text-xs uppercase tracking-wider px-4 py-1.5 rounded-full mb-6 shadow-md">
+                            🔥 ÚLTIMAS 5 VAGAS PARA SETEMBRO
+                        </div>
+
+                        <h2 class="fonte-acento text-3xl sm:text-5xl font-semibold">Alinhamento Arquetípico Pessoal</h2>
+                        <p class="text-roxo-200 text-sm sm:text-base mt-3 max-w-md mx-auto">
+                            Garanta seu atendimento individual e receba sua orientação personalizada.
+                        </p>
+
+                        <div class="mt-8 bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm max-w-md mx-auto">
+                            <p class="text-xs text-dourado-300 font-semibold uppercase tracking-widest">Valor do Alinhamento</p>
+                            <div class="mt-2 flex items-center justify-center gap-1">
+                                <span class="fonte-acento text-4xl sm:text-6xl font-bold text-white">R$ 249,90</span>
+                            </div>
+                            <p class="text-xs text-roxo-200 mt-2 font-medium">Pagamento único via Pix ou Cartão de Crédito</p>
+                        </div>
+
+                        <div class="max-w-md mx-auto text-left mt-8 space-y-3.5 text-sm text-roxo-100 bg-white/5 p-6 rounded-2xl border border-white/10">
+                            <div class="flex items-center gap-3"><span class="text-dourado-400 font-bold">✓</span><span>Canalização Espiritual Individual</span></div>
+                            <div class="flex items-center gap-3"><span class="text-dourado-400 font-bold">✓</span><span>Mapeamento dos Seus Bloqueios</span></div>
+                            <div class="flex items-center gap-3"><span class="text-dourado-400 font-bold">✓</span><span>Análise dos 4 Elementos (Água, Terra, Fogo, Ar)</span></div>
+                            <div class="flex items-center gap-3"><span class="text-dourado-400 font-bold">✓</span><span>Combo de Arquétipos Recomendados</span></div>
+                            <div class="flex items-center gap-3"><span class="text-dourado-400 font-bold">✓</span><span>Decretos Potentes de Ativação Energética</span></div>
+                            <div class="flex items-center gap-3"><span class="text-dourado-400 font-bold">✓</span><span>Áudios Explicativos + PDFs no WhatsApp/E-mail</span></div>
+                        </div>
+
+                        <a href="https://forms.gle/66k5yCtRTrNafBMNA" target="_blank" rel="noopener noreferrer"
+                           class="btn sombra-cta inline-flex w-full max-w-md justify-center mt-8 bg-dourado-500 hover:bg-dourado-400 text-roxo-900 font-extrabold py-4.5 px-6 rounded-2xl text-base sm:text-lg tracking-wide uppercase">
+                            QUERO O MEU ALINHAMENTO
+                        </a>
+                        
+                        <p class="text-xs text-roxo-300 mt-4">
+                            🔒 Envio de dados 100% seguro · Atendimento direto por Érika
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ DE QUEBRA DE OBJEÇÕES -->
+        <section class="px-4 sm:px-6 pb-16">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-8">
+                    <p class="text-xs uppercase tracking-[.18em] text-dourado-700 font-bold">Perguntas Frequentes</p>
+                    <h2 class="fonte-acento text-3xl sm:text-4xl text-roxo-900 font-semibold mt-2">Dúvidas Frequentes</h2>
+                </div>
+
+                <div class="space-y-3">
+                    <details class="bg-white rounded-2xl border border-roxo-100 p-5">
+                        <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold text-sm sm:text-base text-roxo-900">
+                            <span>Como funciona o envio do meu material?</span>
+                            <span class="faq-icon text-dourado-600 text-xl leading-none">+</span>
+                        </summary>
+                        <p class="mt-4 text-sm text-roxo-600 leading-relaxed">
+                            Todo o retorno do seu Alinhamento Arquetípico é enviado por áudios gravados e PDFs explicativos diretamente no seu WhatsApp ou E-mail.
+                        </p>
+                    </details>
+
+                    <details class="bg-white rounded-2xl border border-roxo-100 p-5">
+                        <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold text-sm sm:text-base text-roxo-900">
+                            <span>Eu preciso saber quais são meus objetivos antes de fazer?</span>
+                            <span class="faq-icon text-dourado-600 text-xl leading-none">+</span>
+                        </summary>
+                        <p class="mt-4 text-sm text-roxo-600 leading-relaxed">
+                            Não. Eu não preciso saber quais são os seus objetivos ou o sonho que mais deseja realizar. Através da canalização espiritual e da leitura dos seus elementos, eu identifico o que a sua energia está pedindo neste momento.
+                        </p>
+                    </details>
+
+                    <details class="bg-white rounded-2xl border border-roxo-100 p-5">
+                        <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold text-sm sm:text-base text-roxo-900">
+                            <span>O que diferencia esse alinhamento de apenas baixar imagens de arquétipos?</span>
+                            <span class="faq-icon text-dourado-600 text-xl leading-none">+</span>
+                        </summary>
+                        <p class="mt-4 text-sm text-roxo-600 leading-relaxed">
+                            Não é uma ativação simples e nem apenas papéis de parede. Trata-se de um ancoramento potente, com decretos energéticos e ajuste dos seus elementos (Água, Terra, Fogo e Ar) para fazer você vibrar na mesma frequência daquilo que deseja atrair.
+                        </p>
+                    </details>
+
+                    <details class="bg-white rounded-2xl border border-roxo-100 p-5">
+                        <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold text-sm sm:text-base text-roxo-900">
+                            <span>Por que restam apenas 5 vagas para Setembro?</span>
+                            <span class="faq-icon text-dourado-600 text-xl leading-none">+</span>
+                        </summary>
+                        <p class="mt-4 text-sm text-roxo-600 leading-relaxed">
+                            Como cada Alinhamento exige uma canalização espiritual individualizada e dedicação exclusiva com meus mentores, abro pouquíssimas vagas por mês para garantir a profundidade e entrega de cada material.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL COM CONVITE PESSOAL -->
+        <section class="px-4 sm:px-6 pb-16">
+            <div class="max-w-3xl mx-auto text-center rounded-[2rem] border border-dourado-200 bg-gradient-to-br from-white via-dourado-50 to-roxo-50 p-8 sm:p-12">
+                <p class="text-xs uppercase tracking-[.18em] text-dourado-700 font-bold">Sua hora chegou</p>
+                <h2 class="fonte-acento text-3xl sm:text-4xl text-roxo-900 font-semibold mt-2 leading-tight">
+                    Será um grande prazer lhe guiar nessa jornada que todos os dias transforma a minha vida!
+                </h2>
+                <p class="text-sm sm:text-base text-roxo-700 mt-4 max-w-2xl mx-auto leading-relaxed">
+                    Não espere mais tempo tentando sozinha. Garanta a sua vaga entre as últimas de Setembro e receba a sua direção.
+                </p>
+                <a href="https://forms.gle/66k5yCtRTrNafBMNA" target="_blank" rel="noopener noreferrer"
+                   class="btn sombra-cta inline-flex mt-7 bg-roxo-700 hover:bg-roxo-800 text-white font-bold px-8 py-4 rounded-2xl text-sm sm:text-base">
+                    QUERO O MEU ALINHAMENTO AGORA
+                </a>
+                <p class="text-xs text-roxo-600 mt-4">R$ 249,90 · Últimas 5 Vagas para Setembro</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-roxo-900 text-roxo-200 py-9 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <p class="fonte-acento text-white text-base">Érika · Vida Arquetípica</p>
+            <p class="text-sm text-roxo-400 mt-2">Clareza, profundidade e ancoramento energético para a sua jornada.</p>
+            <p class="text-xs text-roxo-500 mt-3">© 2026 Érika Vida Arquetípica · Todos os direitos reservados</p>
         </div>
     </footer>
 
-    <!-- BARRA FIXA MOBILE (STICKY CTA) -->
-    <div class="sticky-cta">
-        <a href="#comprar" class="cta-button">Acessar Agora</a>
-    </div>
-
-    <!-- Script para carregar os ícones elegantes -->
-    <script>
-        lucide.createIcons();
-    </script>
+    <!-- WHATSAPP FLUTUANTE -->
+    <a href="https://wa.me/message/HYCA7N7T73X4N1"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Falar pelo WhatsApp"
+       class="whatsapp-flutuante fixed bottom-5 right-5 z-50 w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-2xl hover:scale-110">
+        <svg class="w-6 h-6 md:w-7 md:h-7" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path fill="currentColor" d="M19.11 17.23c-.28-.14-1.66-.82-1.92-.91-.26-.1-.45-.14-.64.14-.19.28-.73.91-.89 1.1-.16.19-.33.21-.61.07-.28-.14-1.19-.44-2.27-1.4-.84-.75-1.4-1.67-1.57-1.95-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.64-1.54-.87-2.11-.23-.55-.46-.47-.64-.48h-.55c-.19 0-.49.07-.75.35-.26.28-1 .98-1 2.4s1.03 2.79 1.17 2.98c.14.19 2.03 3.1 4.92 4.35.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.11.55-.08 1.66-.68 1.9-1.34.23-.66.23-1.22.16-1.34-.07-.12-.26-.19-.54-.33Z"/>
+            <path fill="currentColor" d="M27.02 4.93A14.94 14.94 0 0 0 16.4.53C8.15.53 1.44 7.23 1.44 15.49c0 2.63.69 5.2 1.99 7.47L1.31 29.3l6.5-2.08a14.98 14.98 0 0 0 8.58 2.69h.01c8.25 0 14.96-6.71 14.96-14.96 0-4-1.56-7.76-4.34-10.02ZM16.4 27.43h-.01a12 12 0 0 1-6.12-1.67l-.44-.26-3.86 1.24 1.26-3.76-.29-.46a11.95 11.95 0 0 1-1.84-6.4c0-6.63 5.4-12.02 12.04-12.02 3.21 0 6.23 1.25 8.5 3.52a11.96 11.96 0 0 1 3.5 8.51c0 6.62-5.4 12.02-12.04 12.02Z"/>
+        </svg>
+    </a>
 </body>
 </html>
